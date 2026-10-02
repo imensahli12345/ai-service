@@ -1,0 +1,57 @@
+group,text,expected_category,expected_severity,why
+1-basic,le camion est en panne,VEHICLE_ISSUE,HIGH,simple breakdown (french)
+1-basic,truck broke down on the highway,VEHICLE_ISSUE,HIGH,"""broke down"" is a known keyword gap - LLM should still get it"
+1-basic,engine overheating had to stop,VEHICLE_ISSUE,HIGH,no obvious keyword
+1-basic,flat tire need assistance,VEHICLE_ISSUE,LOW,minor vehicle issue
+1-basic,بونيو مثقب توقفت,VEHICLE_ISSUE,HIGH,flat tire (arabic script)
+1-basic,orage tres fort visibilite nulle,WEATHER,HIGH,storm (french)
+1-basic,chta khfifa just a small delay,WEATHER,LOW,light rain - must stay LOW
+1-basic,embouteillage enorme sur la route,ROAD_TRAFFIC,LOW,traffic jam
+1-basic,7adhr accident 9dami tri9 masdouda,ROAD_TRAFFIC,HIGH,accident AHEAD blocking road - not the driver's truck (arabizi)
+1-basic,حادث قدامي الطريق مسدودة,ROAD_TRAFFIC,HIGH,same meaning in arabic script - keyword path gets this wrong
+1-basic,no one home customer not answering,CUSTOMER_ABSENT,LOW,customer absent (english)
+1-basic,raho kharej ma najamch nsallem,CUSTOMER_ABSENT,LOW,customer out (arabizi)
+1-basic,el client mouch mawjoud fi dar barcha wa9t,CUSTOMER_ABSENT,HIGH,waited a long time
+1-basic,goods missing from the shipment,CARGO_ISSUE,LOW,missing goods
+1-basic,el carton mballel bel ma sel3a 5asra,CARGO_ISSUE,HIGH,cargo wet and ruined - not vehicle damage
+1-basic,ena mrid barcha manjamch nkamel,DRIVER_ISSUE,HIGH,driver sick (arabizi)
+1-basic,ena 3ayyen barcha lezemni nrtah chwaya,DRIVER_ISSUE,LOW,driver tired - NOT injured
+2-confusable,ma l9itch el client 3andou telifoun sakket,CUSTOMER_ABSENT,LOW,"""couldn't find the CUSTOMER"""
+2-confusable,ma l9itch el sel3a fi camion,CARGO_ISSUE,LOW,"""couldn't find the GOODS"" - same verb as above"
+2-confusable,i couldnt find the products,CARGO_ISSUE,LOW,the original bug case
+3-wrong-address,ما لقيتش العنوان الجي بي اس غالط,OTHER,LOW,wrong address must NEVER be CUSTOMER_ABSENT (needsReview=true)
+3-wrong-address,adresse fausse ma3andich el number exact,OTHER,LOW,wrong address (arabizi/french)
+3-wrong-address,wrong address given by customer wasted an hour searching,OTHER,LOW,"mentions ""customer"" but it is an address problem"
+3-wrong-address,l adresse n existe pas sur la carte,OTHER,LOW,address not on the map
+3-wrong-address,impossible de trouver l adresse le GPS est faux,OTHER,LOW,GPS wrong
+3-wrong-address,العنوان مش صحيح درت دور برشة,OTHER,LOW,wrong address (arabic script)
+4-critical,chauffeur blesse besoin d une ambulance,DRIVER_ISSUE,CRITICAL,"injury + ambulance (the famous ""row 73"")"
+4-critical,driver injured in a minor fall needs medical help,DRIVER_ISSUE,CRITICAL,"""minor"" must NOT downgrade an injury"
+4-critical,chaufeur jri7 in accident blesse,DRIVER_ISSUE,CRITICAL,accident + injury (mixed)
+4-critical,fayadan fi tri9 el karhba ma temchich,WEATHER,CRITICAL,flood (arabizi) - must agree with the next row
+4-critical,فيضان في الطريق السيارة ما تمشيش,WEATHER,CRITICAL,same flood in arabic script
+4-critical,snow storm truck stuck,WEATHER,CRITICAL,stuck in snow storm
+5-heldout-critical,el sayek tjar7 w ma y9edrech ychouf lezem ambulance,DRIVER_ISSUE,CRITICAL,H1 injury + ambulance (arabizi) - allam failed this
+5-heldout-critical,rjel msal7in 3tarrdou el camion w y7addedou fi sayek,DRIVER_ISSUE|OTHER,CRITICAL,H2 armed men threatening driver - every model failed this
+5-heldout-critical,السواق طاح من الكميون وينزف ونحتاجو إسعاف,DRIVER_ISSUE,CRITICAL,H3 driver fell and is bleeding (arabic script)
+5-heldout-critical,الأرض تنهار تحت الكميون قرب الوادي,WEATHER|OTHER|VEHICLE_ISSUE|ROAD_TRAFFIC,CRITICAL,H4 ground collapsing under the truck
+5-heldout-critical,accident grave sur la route de Sfax plusieurs blessés les pompiers sont sur place,ROAD_TRAFFIC|DRIVER_ISSUE|VEHICLE_ISSUE,CRITICAL,H5 accident with several injured
+5-heldout-critical,le chauffeur fait un malaise cardiaque on appelle le SAMU,DRIVER_ISSUE,CRITICAL,H6 heart attack - no injury word
+5-heldout-critical,driver collapsed and is unresponsive calling an ambulance,DRIVER_ISSUE,CRITICAL,H7 driver collapsed
+5-heldout-critical,truck rolled over on the highway two people trapped inside,ROAD_TRAFFIC|DRIVER_ISSUE|VEHICLE_ISSUE,CRITICAL,H8 rollover with people trapped
+5-heldout-critical,brakes failed on the steep mountain descent and the truck cannot stop,VEHICLE_ISSUE,CRITICAL,H9 danger without injury - every model said HIGH
+5-heldout-critical,tempête de sable visibilité nulle le camion est arrêté au milieu de l'autoroute,WEATHER,CRITICAL,H10 sandstorm - borderline label
+6-not-critical,police blocked the road for an inspection,ROAD_TRAFFIC,LOW,routine police - must NOT be CRITICAL
+6-not-critical,customer not home will retry tomorrow,CUSTOMER_ABSENT,LOW,N1 control - must NOT be CRITICAL
+6-not-critical,الطريق مسدودة بسبب أشغال وصلاح الطريق,ROAD_TRAFFIC,HIGH,N2 road works - must NOT be CRITICAL (LOW or HIGH both fine)
+6-not-critical,le chauffeur est fatigué il fait une pause de deux heures,DRIVER_ISSUE,LOW,N3 tired not hurt - must NOT be CRITICAL
+7-vague,ok,OTHER,LOW,no signal at all -> OTHER + needsReview=true
+7-vague,je ne sais pas quoi faire,OTHER,LOW,vague
+7-vague,3andi mochkla,OTHER,LOW,"""I have a problem"" - no detail"
+7-vague,tout va bien pour l instant,OTHER,LOW,not even an exception
+7-vague,will update you later,OTHER,LOW,acknowledgement only
+8-robustness,the train was late but my truck is fine,OTHER,LOW,"""rain"" inside ""train"" must NOT match WEATHER"
+8-robustness,wait 7 hours at 9h30 for 20 colis 5 km away,OTHER,LOW,real numbers must not be read as arabizi letters
+8-robustness,LE CAMION EST EN PANNE !!!,VEHICLE_ISSUE,HIGH,uppercase and punctuation
+8-robustness,el camion kharban w el client mouch fi dar,VEHICLE_ISSUE|CUSTOMER_ABSENT,HIGH,two problems in one message - see which one wins
+8-robustness,this delivery will fail,OTHER,LOW,"contains ""fail"": returns DEMO_FAIL error if DEMO_FAIL_HOOK=true in .env"
