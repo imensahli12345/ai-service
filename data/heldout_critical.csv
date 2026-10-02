@@ -1,0 +1,14 @@
+id,text,language,expected_severity,acceptable_categories,kind,note
+H1,el sayek tjar7 w ma y9edrech ychouf lezem ambulance,arabizi,CRITICAL,DRIVER_ISSUE,injury+ambulance,
+H2,rjel msal7in 3tarrdou el camion w y7addedou fi sayek,arabizi,CRITICAL,DRIVER_ISSUE|OTHER,active danger no injury,armed men threatening driver; category genuinely ambiguous
+H3,السواق طاح من الكميون وينزف ونحتاجو إسعاف,arabic-script,CRITICAL,DRIVER_ISSUE,injury+ambulance,
+H4,الأرض تنهار تحت الكميون قرب الوادي,arabic-script,CRITICAL,WEATHER|OTHER|VEHICLE_ISSUE|ROAD_TRAFFIC,active danger no injury,ground collapsing under truck; category ambiguous
+H5,accident grave sur la route de Sfax plusieurs blessés les pompiers sont sur place,french,CRITICAL,ROAD_TRAFFIC|DRIVER_ISSUE|VEHICLE_ISSUE,accident with casualties,category ambiguous
+H6,le chauffeur fait un malaise cardiaque on appelle le SAMU,french,CRITICAL,DRIVER_ISSUE,ambulance,no injury word; medical emergency
+H7,driver collapsed and is unresponsive calling an ambulance,english,CRITICAL,DRIVER_ISSUE,ambulance,
+H8,truck rolled over on the highway two people trapped inside,english,CRITICAL,ROAD_TRAFFIC|DRIVER_ISSUE|VEHICLE_ISSUE,accident with casualties,category ambiguous
+H9,brakes failed on the steep mountain descent and the truck cannot stop,english,CRITICAL,VEHICLE_ISSUE,active danger no injury,
+H10,tempête de sable visibilité nulle le camion est arrêté au milieu de l'autoroute,french,CRITICAL,WEATHER,active danger no injury,borderline: risk of rear-end collision; report separately if it disagrees
+N1,customer not home will retry tomorrow,english,NOT_CRITICAL,CUSTOMER_ABSENT,overcorrection control,severity must not be CRITICAL
+N2,الطريق مسدودة بسبب أشغال وصلاح الطريق,arabic-script,NOT_CRITICAL,ROAD_TRAFFIC,overcorrection control,severity must not be CRITICAL
+N3,le chauffeur est fatigué il fait une pause de deux heures,french,NOT_CRITICAL,DRIVER_ISSUE,overcorrection control,exhausted but unhurt; severity must not be CRITICAL
