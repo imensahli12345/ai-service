@@ -1,0 +1,213 @@
+{
+  "source_baseline": "eval_results\\eval_20260924T150807Z_baseline.json",
+  "source_baseline_timestamp": "20260924T150807Z",
+  "corrected_dataset": "D:\\ai-service\\data\\eval_set.csv",
+  "overall_summary": {
+    "total_rows": 100,
+    "category_accuracy": 0.35,
+    "category_macro_f1": 0.22147804576376004,
+    "per_category": {
+      "CARGO_ISSUE": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 13
+      },
+      "CUSTOMER_ABSENT": {
+        "precision": 0.5,
+        "recall": 0.7692307692307693,
+        "f1": 0.6060606060606061,
+        "support": 13
+      },
+      "DRIVER_ISSUE": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 12
+      },
+      "OTHER": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 24
+      },
+      "ROAD_TRAFFIC": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 12
+      },
+      "VEHICLE_ISSUE": {
+        "precision": 0.32432432432432434,
+        "recall": 0.9230769230769231,
+        "f1": 0.48,
+        "support": 13
+      },
+      "WEATHER": {
+        "precision": 0.3023255813953488,
+        "recall": 1.0,
+        "f1": 0.46428571428571425,
+        "support": 13
+      }
+    },
+    "confusion_matrix": {
+      "VEHICLE_ISSUE": {
+        "VEHICLE_ISSUE": 12,
+        "WEATHER": 1
+      },
+      "WEATHER": {
+        "WEATHER": 13
+      },
+      "ROAD_TRAFFIC": {
+        "WEATHER": 8,
+        "VEHICLE_ISSUE": 4
+      },
+      "CUSTOMER_ABSENT": {
+        "CUSTOMER_ABSENT": 10,
+        "VEHICLE_ISSUE": 2,
+        "WEATHER": 1
+      },
+      "CARGO_ISSUE": {
+        "CUSTOMER_ABSENT": 3,
+        "WEATHER": 5,
+        "VEHICLE_ISSUE": 5
+      },
+      "DRIVER_ISSUE": {
+        "WEATHER": 4,
+        "VEHICLE_ISSUE": 8
+      },
+      "OTHER": {
+        "WEATHER": 11,
+        "CUSTOMER_ABSENT": 7,
+        "VEHICLE_ISSUE": 6
+      }
+    },
+    "per_language_accuracy": {
+      "arabizi": 0.2916666666666667,
+      "arabic-script": 0.34782608695652173,
+      "french": 0.375,
+      "english": 0.32,
+      "mixed": 0.5
+    },
+    "critical_severity_recall": 0.5,
+    "valid_json_rate": 1.0,
+    "analysis_source_rates": {
+      "LLM": 0.95,
+      "KEYWORD_FALLBACK": 0.05,
+      "NO_RESPONSE": 0.0
+    },
+    "latency_seconds": {
+      "mean": 2.5313685660000917,
+      "p95": 4.579322499999762
+    }
+  },
+  "restricted_summary": {
+    "implemented_categories": [
+      "CUSTOMER_ABSENT",
+      "VEHICLE_ISSUE",
+      "WEATHER"
+    ],
+    "row_count": 39,
+    "summary": {
+      "total_rows": 39,
+      "category_accuracy": 0.8974358974358975,
+      "category_macro_f1": 0.895675178283874,
+      "per_category": {
+        "CUSTOMER_ABSENT": {
+          "precision": 1.0,
+          "recall": 0.7692307692307693,
+          "f1": 0.8695652173913044,
+          "support": 13
+        },
+        "VEHICLE_ISSUE": {
+          "precision": 0.8571428571428571,
+          "recall": 0.9230769230769231,
+          "f1": 0.888888888888889,
+          "support": 13
+        },
+        "WEATHER": {
+          "precision": 0.8666666666666667,
+          "recall": 1.0,
+          "f1": 0.9285714285714286,
+          "support": 13
+        }
+      },
+      "confusion_matrix": {
+        "VEHICLE_ISSUE": {
+          "VEHICLE_ISSUE": 12,
+          "WEATHER": 1
+        },
+        "WEATHER": {
+          "WEATHER": 13
+        },
+        "CUSTOMER_ABSENT": {
+          "CUSTOMER_ABSENT": 10,
+          "VEHICLE_ISSUE": 2,
+          "WEATHER": 1
+        }
+      },
+      "per_language_accuracy": {
+        "arabizi": 0.7777777777777778,
+        "arabic-script": 0.8888888888888888,
+        "french": 1.0,
+        "english": 0.8888888888888888,
+        "mixed": 1.0
+      },
+      "critical_severity_recall": 0.6666666666666666,
+      "valid_json_rate": 1.0,
+      "analysis_source_rates": {
+        "LLM": 0.8974358974358975,
+        "KEYWORD_FALLBACK": 0.10256410256410256,
+        "NO_RESPONSE": 0.0
+      },
+      "latency_seconds": {
+        "mean": 1.704617828205114,
+        "p95": 4.579322499999762
+      }
+    }
+  },
+  "regression_check": [
+    {
+      "id": "78",
+      "text": "ما لقيتش العنوان الجي بي اس غالط",
+      "expected_category": "OTHER",
+      "baseline_predicted_category": "CUSTOMER_ABSENT",
+      "still_misrouted_to_customer_absent": true
+    },
+    {
+      "id": "81",
+      "text": "adresse fausse ma3andich el number exact",
+      "expected_category": "OTHER",
+      "baseline_predicted_category": "CUSTOMER_ABSENT",
+      "still_misrouted_to_customer_absent": true
+    },
+    {
+      "id": "84",
+      "text": "wrong address given by customer wasted an hour searching",
+      "expected_category": "OTHER",
+      "baseline_predicted_category": "CUSTOMER_ABSENT",
+      "still_misrouted_to_customer_absent": true
+    },
+    {
+      "id": "85",
+      "text": "l adresse n existe pas sur la carte",
+      "expected_category": "OTHER",
+      "baseline_predicted_category": "CUSTOMER_ABSENT",
+      "still_misrouted_to_customer_absent": true
+    },
+    {
+      "id": "86",
+      "text": "ma3andich raqm el 3imara el adresse na9sa",
+      "expected_category": "OTHER",
+      "baseline_predicted_category": "CUSTOMER_ABSENT",
+      "still_misrouted_to_customer_absent": true
+    },
+    {
+      "id": "87",
+      "text": "ما عنديش رقم العمارة العنوان ناقص",
+      "expected_category": "OTHER",
+      "baseline_predicted_category": "CUSTOMER_ABSENT",
+      "still_misrouted_to_customer_absent": true
+    }
+  ]
+}
