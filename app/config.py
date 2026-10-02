@@ -35,7 +35,7 @@ class Settings:
         if self.openai_timeout_seconds <= 0:
             raise ValueError("OPENAI_TIMEOUT_SECONDS must be greater than zero")
         self.enable_keyword_fallback = _boolean("ENABLE_KEYWORD_FALLBACK", True)
-        self.demo_fail_hook = _boolean("DEMO_FAIL_HOOK", True)
+        self.demo_fail_hook = _boolean("DEMO_FAIL_HOOK", False)
 
 
 @lru_cache
