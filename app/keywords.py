@@ -302,6 +302,179 @@ CATEGORY_KEYWORDS: dict[Category, tuple[str, ...]] = {
         "برد برشة",
         "صقيع",
     ),
+
+    Category.ROAD_TRAFFIC: (
+        # English -- construction/roadworks, congestion, strike, accident-ahead, police roadblock.
+        # Deliberately does NOT include a bare "road closed"/"road blocked" phrase: that phrase is
+        # already a WEATHER keyword (roads get blocked by rain too) and the two are only
+        # distinguishable by what's causing the block, not the "blocked" word itself.
+        "road closed for construction",
+        "closed for construction",
+        "construction site",
+        "roadworks",
+        "road works",
+        "long detour",
+        "detour",
+        "traffic jam",
+        "massive traffic jam",
+        "heavy traffic",
+        "not moving",
+        "gridlock",
+        "drivers strike",
+        "truckers strike",
+        "strike",
+        "accident ahead",
+        "accident up ahead",
+        "road blocked by accident",
+        "police checkpoint",
+        "police roadblock",
+        "blocked the road for an inspection",
+        "road inspection",
+
+        # French commonly used in Tunisia
+        "route fermee travaux",
+        "route fermée travaux",
+        "travaux",
+        "chantier",
+        "grosse deviation",
+        "embouteillage",
+        "embouteillage enorme",
+        "bouchon",
+        "grand bouchon",
+        "greve des routiers",
+        "grève des routiers",
+        "greve",
+        "grève",
+        "accident devant",
+        "barrage de police",
+        "controle de police",
+        "contrôle de police",
+
+        # Tunisian Arabic / Arabizi
+        "chantier fi tri9",
+        "tri9 masdouda 7asb chantier",
+        "tri9 masdouda bel chantier",
+        "zdi7am",
+        "zdiham",
+        "zdi7am kbir",
+        "7adhr accident",
+        "hadhr accident",
+        "accident 9dami",
+        "accident qdami",
+        "police wa9fa fi tri9",
+        "fama greve",
+        "greve des routiers",
+
+        # Tunisian Arabic script
+        "أشغال",
+        "الطريق مسدودة بسبب أشغال",
+        "ازدحام",
+        "ازدحام كبير",
+        "إضراب",
+        "إضراب السائقين",
+        "حادث قدامي",
+        "بوليس سكر الطريق",
+        "حاجز بوليس",
+    ),
+
+    Category.CARGO_ISSUE: (
+        # English -- missing goods, damaged/wet goods, wrong items loaded.
+        "goods missing",
+        "goods missing from the shipment",
+        "missing items",
+        "missing from the shipment",
+        "couldnt find the products",
+        "cant find the products",
+        "products missing",
+        "cargo damaged",
+        "cargo is damaged",
+        "items broken",
+        "some items broken",
+        "box arrived damaged",
+        "wet cargo",
+        "water damaged",
+        "wrong items loaded",
+        "wrong products loaded",
+
+        # French commonly used in Tunisia
+        "marchandise manquante",
+        "colis endommage",
+        "colis endommagé",
+        "articles manquants",
+        "produits manquants",
+        "produits differents",
+        "produits différents",
+        "carton mouille",
+        "carton mouillé",
+
+        # Tunisian Arabic / Arabizi
+        "ma l9itch el sel3a",
+        "mal9itch el sel3a",
+        "sel3a mkassra",
+        "sel3a 5asra",
+        "sel3a khasra",
+        "el sel3a na9sa",
+        "carton mballel",
+        "el carton mballel",
+        "package kayen probleme",
+        "articles na9sin",
+
+        # Tunisian Arabic script
+        "السلعة",
+        "السلعة مكسورة",
+        "السلعة خسرانة",
+        "الكرتون مبلل",
+        "سلعة ناقصة",
+        "بضاعة ناقصة",
+    ),
+
+    Category.DRIVER_ISSUE: (
+        # English -- driver sick, driver injured, driver fatigued. Distinct from VEHICLE_ISSUE:
+        # these are about the driver's own body/state, not the truck.
+        "driver sick",
+        "feel very sick",
+        "feel sick",
+        "cannot continue driving",
+        "driver injured",
+        "injured in a minor fall",
+        "injured in a fall",
+        "injured",
+        "needs medical help",
+        "besoin d une ambulance",
+        "extremely tired",
+        "need a short break",
+        "need a break before continuing",
+
+        # French commonly used in Tunisia
+        "je suis malade",
+        "malade je ne peux pas continuer",
+        "chauffeur blesse",
+        "chauffeur blessé",
+        "chaufeur blesse",
+        "blesse",
+        "blessé",
+        "besoin d'une ambulance",
+
+        # Tunisian Arabic / Arabizi
+        "ena mrid",
+        "ena mrid barcha",
+        "manjamch nkamel",
+        "chaufeur jri7",
+        "jri7t chwaya",
+        "jri7",
+        "jriha",
+        "ena 3ayyen",
+        "ena 3ayyen barcha",
+        "lezemni nrtah",
+
+        # Tunisian Arabic script
+        "أنا مريض",
+        "ما نجمش نكمل",
+        "جريح",
+        "جريت شوية",
+        "أنا عيان",
+        "لازمني نرتاح",
+    ),
 }
 
 
@@ -386,7 +559,8 @@ CRITICAL_SEVERITY_KEYWORDS = (
     "total loss",
     "life threatening",
     "medical emergency",
-    "police",
+    "called the police",
+    "police called",
     "ambulance",
 
     # French
@@ -399,7 +573,7 @@ CRITICAL_SEVERITY_KEYWORDS = (
     "dangereux",
     "grave",
     "perte totale",
-    "police",
+    "appelé la police",
     "ambulance",
 
     # Tunisian Arabic / Arabizi
@@ -441,6 +615,6 @@ CRITICAL_SEVERITY_KEYWORDS = (
     "طارئ",
     "حالة طارئة",
     "إسعاف",
-    "بوليس",
+    "طلب البوليس",
     "دم",
 )
