@@ -1,0 +1,112 @@
+﻿Loaded 100 rows from D:\ai-service\data\eval_set.csv
+[1/100] id=1 expected=VEHICLE_ISSUE predicted=OTHER source=LLM
+[2/100] id=2 expected=VEHICLE_ISSUE predicted=OTHER source=LLM
+[3/100] id=3 expected=VEHICLE_ISSUE predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[4/100] id=4 expected=VEHICLE_ISSUE predicted=OTHER source=LLM
+[5/100] id=5 expected=VEHICLE_ISSUE predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[6/100] id=6 expected=VEHICLE_ISSUE predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[7/100] id=7 expected=VEHICLE_ISSUE predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[8/100] id=8 expected=VEHICLE_ISSUE predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[9/100] id=9 expected=VEHICLE_ISSUE predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[10/100] id=10 expected=VEHICLE_ISSUE predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[11/100] id=11 expected=VEHICLE_ISSUE predicted=OTHER source=KEYWORD_FALLBACK
+[12/100] id=12 expected=VEHICLE_ISSUE predicted=OTHER source=KEYWORD_FALLBACK
+[13/100] id=13 expected=VEHICLE_ISSUE predicted=OTHER source=LLM
+[14/100] id=14 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[15/100] id=15 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[16/100] id=16 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[17/100] id=17 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[18/100] id=18 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[19/100] id=19 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[20/100] id=20 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[21/100] id=21 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[22/100] id=22 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[23/100] id=23 expected=WEATHER predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[24/100] id=24 expected=WEATHER predicted=VEHICLE_ISSUE source=KEYWORD_FALLBACK
+[25/100] id=25 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[26/100] id=26 expected=WEATHER predicted=WEATHER source=KEYWORD_FALLBACK
+[27/100] id=27 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[28/100] id=28 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[29/100] id=29 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[30/100] id=30 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[31/100] id=31 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[32/100] id=32 expected=ROAD_TRAFFIC predicted=OTHER source=LLM
+[33/100] id=33 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[34/100] id=34 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[35/100] id=35 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[36/100] id=36 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[37/100] id=37 expected=ROAD_TRAFFIC predicted=WEATHER source=KEYWORD_FALLBACK
+[38/100] id=38 expected=ROAD_TRAFFIC predicted=ROAD_TRAFFIC source=KEYWORD_FALLBACK
+[39/100] id=39 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[40/100] id=40 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[41/100] id=41 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[42/100] id=42 expected=CUSTOMER_ABSENT predicted=OTHER source=LLM
+[43/100] id=43 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[44/100] id=44 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[45/100] id=45 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[46/100] id=46 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[47/100] id=47 expected=CUSTOMER_ABSENT predicted=OTHER source=KEYWORD_FALLBACK
+[48/100] id=48 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[49/100] id=49 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[50/100] id=50 expected=CUSTOMER_ABSENT predicted=OTHER source=KEYWORD_FALLBACK
+[51/100] id=51 expected=CUSTOMER_ABSENT predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[52/100] id=52 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[53/100] id=53 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[54/100] id=54 expected=CARGO_ISSUE predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[55/100] id=55 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[56/100] id=56 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[57/100] id=57 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[58/100] id=58 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[59/100] id=59 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[60/100] id=60 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[61/100] id=61 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=LLM
+[62/100] id=62 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[63/100] id=63 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[64/100] id=64 expected=CARGO_ISSUE predicted=CARGO_ISSUE source=KEYWORD_FALLBACK
+[65/100] id=65 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[66/100] id=66 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[67/100] id=67 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[68/100] id=68 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[69/100] id=69 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[70/100] id=70 expected=DRIVER_ISSUE predicted=OTHER source=LLM
+[71/100] id=71 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[72/100] id=72 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[73/100] id=73 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[74/100] id=74 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[75/100] id=75 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[76/100] id=76 expected=DRIVER_ISSUE predicted=DRIVER_ISSUE source=KEYWORD_FALLBACK
+[77/100] id=77 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[78/100] id=78 expected=OTHER predicted=CUSTOMER_ABSENT source=KEYWORD_FALLBACK
+[79/100] id=79 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[80/100] id=80 expected=OTHER predicted=OTHER source=LLM
+[81/100] id=81 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[82/100] id=82 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[83/100] id=83 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[84/100] id=84 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[85/100] id=85 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[86/100] id=86 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[87/100] id=87 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[88/100] id=88 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[89/100] id=89 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[90/100] id=90 expected=OTHER predicted=OTHER source=LLM
+[91/100] id=91 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[92/100] id=92 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[93/100] id=93 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[94/100] id=94 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[95/100] id=95 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[96/100] id=96 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[97/100] id=97 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[98/100] id=98 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[99/100] id=99 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+[100/100] id=100 expected=OTHER predicted=OTHER source=KEYWORD_FALLBACK
+
+=== Summary ===
+Category accuracy: 84.0%
+Category macro-F1: 0.848
+Valid JSON rate: 100.0%
+analysisSource: LLM=10.0% KEYWORD_FALLBACK=90.0% NO_RESPONSE=0.0%
+WARNING: fallback rate is 90.0% (>15%). This usually means the LLM path was rate-limited or failing mid-run (Groq free tier), not that the model is genuinely this unreliable. Category accuracy/F1 from this run should NOT be reported as the LLM path's real quality -- lower --rps, raise --max-retries/--backoff-base, or re-run later.
+CRITICAL severity recall: 50.0%
+Latency mean=0.42s p95=0.76s
+
+Wrote results to D:\ai-service\eval_results\eval_20260925T145721Z_after-step4.json

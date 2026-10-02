@@ -1,0 +1,234 @@
+{
+  "timestamp": "20260925T151932Z",
+  "base_url": "http://127.0.0.1:8000",
+  "dataset": "C:\\Users\\imen\\AppData\\Local\\Temp\\claude\\C--Plateforme-de-Suivi-de-Flotte-de-Camions\\0661a27d-cccc-4244-ae43-0b8147aa3f31\\scratchpad\\subset_check.csv",
+  "label": "subset-check",
+  "summary": {
+    "total_rows": 10,
+    "category_accuracy": 0.7,
+    "category_macro_f1": 0.48484848484848486,
+    "per_category": {
+      "CARGO_ISSUE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "CUSTOMER_ABSENT": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "DRIVER_ISSUE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "OTHER": {
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091,
+        "support": 6
+      },
+      "VEHICLE_ISSUE": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "WEATHER": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      }
+    },
+    "confusion_matrix": {
+      "WEATHER": {
+        "VEHICLE_ISSUE": 2
+      },
+      "CARGO_ISSUE": {
+        "CARGO_ISSUE": 1
+      },
+      "DRIVER_ISSUE": {
+        "DRIVER_ISSUE": 1
+      },
+      "OTHER": {
+        "CUSTOMER_ABSENT": 1,
+        "OTHER": 5
+      }
+    },
+    "per_language_accuracy": {
+      "arabizi": 0.5,
+      "arabic-script": 0.3333333333333333,
+      "english": 1.0,
+      "french": 1.0,
+      "mixed": 1.0
+    },
+    "critical_severity_recall": 0.3333333333333333,
+    "valid_json_rate": 1.0,
+    "analysis_source_rates": {
+      "LLM": 0.0,
+      "KEYWORD_FALLBACK": 1.0,
+      "NO_RESPONSE": 0.0
+    },
+    "latency_seconds": {
+      "mean": 0.9544614900005399,
+      "p95": 1.6557621999963885
+    }
+  },
+  "rows": [
+    {
+      "id": "23",
+      "text": "fayadan fi tri9 el karhba ma temchich",
+      "language": "arabizi",
+      "expected_category": "WEATHER",
+      "expected_severity": "CRITICAL",
+      "ambiguous": false,
+      "predicted_category": "VEHICLE_ISSUE",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 1.0425687000097241,
+      "attempts": 1
+    },
+    {
+      "id": "24",
+      "text": "فيضان في الطريق السيارة ما تمشيش",
+      "language": "arabic-script",
+      "expected_category": "WEATHER",
+      "expected_severity": "CRITICAL",
+      "ambiguous": false,
+      "predicted_category": "VEHICLE_ISSUE",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 1.4390588999958709,
+      "attempts": 1
+    },
+    {
+      "id": "52",
+      "text": "i couldnt find the products",
+      "language": "english",
+      "expected_category": "CARGO_ISSUE",
+      "expected_severity": "LOW",
+      "ambiguous": false,
+      "predicted_category": "CARGO_ISSUE",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 0.6725516000005882,
+      "attempts": 1
+    },
+    {
+      "id": "73",
+      "text": "chauffeur blesse besoin d une ambulance",
+      "language": "french",
+      "expected_category": "DRIVER_ISSUE",
+      "expected_severity": "CRITICAL",
+      "ambiguous": false,
+      "predicted_category": "DRIVER_ISSUE",
+      "predicted_severity": "CRITICAL",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 0.9367605000006733,
+      "attempts": 1
+    },
+    {
+      "id": "78",
+      "text": "ما لقيتش العنوان الجي بي اس غالط",
+      "language": "arabic-script",
+      "expected_category": "OTHER",
+      "expected_severity": "LOW",
+      "ambiguous": false,
+      "predicted_category": "CUSTOMER_ABSENT",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 1.1445763999945484,
+      "attempts": 1
+    },
+    {
+      "id": "81",
+      "text": "adresse fausse ma3andich el number exact",
+      "language": "mixed",
+      "expected_category": "OTHER",
+      "expected_severity": "LOW",
+      "ambiguous": false,
+      "predicted_category": "OTHER",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 1.143792000002577,
+      "attempts": 1
+    },
+    {
+      "id": "84",
+      "text": "wrong address given by customer wasted an hour searching",
+      "language": "english",
+      "expected_category": "OTHER",
+      "expected_severity": "HIGH",
+      "ambiguous": false,
+      "predicted_category": "OTHER",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 0.42464019999897573,
+      "attempts": 1
+    },
+    {
+      "id": "85",
+      "text": "l adresse n existe pas sur la carte",
+      "language": "french",
+      "expected_category": "OTHER",
+      "expected_severity": "LOW",
+      "ambiguous": false,
+      "predicted_category": "OTHER",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 0.7906777000025613,
+      "attempts": 1
+    },
+    {
+      "id": "86",
+      "text": "ma3andich raqm el 3imara el adresse na9sa",
+      "language": "arabizi",
+      "expected_category": "OTHER",
+      "expected_severity": "LOW",
+      "ambiguous": false,
+      "predicted_category": "OTHER",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 0.2942267000034917,
+      "attempts": 1
+    },
+    {
+      "id": "87",
+      "text": "ما عنديش رقم العمارة العنوان ناقص",
+      "language": "arabic-script",
+      "expected_category": "OTHER",
+      "expected_severity": "LOW",
+      "ambiguous": false,
+      "predicted_category": "OTHER",
+      "predicted_severity": "LOW",
+      "analysis_source": "KEYWORD_FALLBACK",
+      "valid_json": true,
+      "error": null,
+      "latency_seconds": 1.6557621999963885,
+      "attempts": 1
+    }
+  ]
+}
