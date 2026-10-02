@@ -1,0 +1,117 @@
+# AI-DRAFTED dataset. The Tunisian rows (arabizi / arabic-script) were written by an LLM, not a
+# native speaker, and MUST be reviewed by a native Tunisian Arabic speaker before any accuracy/F1
+# number computed from this file is treated as valid for the internship report. This is a 100-row
+# starter subset for a fast baseline; grow to 300-500 rows (same balance) once Steps 1-4 are done.
+# FINAL taxonomy (7 categories, decided 2026-09-24): VEHICLE_ISSUE, WEATHER, ROAD_TRAFFIC,
+# CUSTOMER_ABSENT, CARGO_ISSUE, DRIVER_ISSUE, OTHER. ADDRESS_ISSUE and CUSTOMER_REFUSED are out of
+# scope; the 12 rows below that were labeled ADDRESS_ISSUE (ids 77-88) are relabeled OTHER,
+# ambiguous=false, and kept distinguishable from the genuinely ambiguous OTHER rows (ids 89-100,
+# ambiguous=true) via the notes column. A wrong address must NEVER be classified as
+# CUSTOMER_ABSENT -- that would tell a customer who was home the whole time to wait for a
+# reschedule. ids 78, 81, 84, 85, 86, 87 are a named regression check: the pre-relabel baseline
+# predicted CUSTOMER_ABSENT for all six (see PROGRESS.md).
+# ROAD_TRAFFIC, CARGO_ISSUE and DRIVER_ISSUE are not implemented in app/models.py's Category enum
+# yet (as of 2026-09-24) -- those rows will keep scoring as misses until that lands (Step 3/4).
+# Rows with ambiguous=true have expected_category=OTHER and are not meant to have a confident
+# answer -- a good model should return OTHER + low confidence + needsReview=true.
+id,text,language,expected_category,expected_severity,ambiguous,notes
+1,el camion kharban fi tri9,arabizi,VEHICLE_ISSUE,HIGH,false,
+2,الكاميو خربان في الطريق,arabic-script,VEHICLE_ISSUE,HIGH,false,
+3,le camion est en panne,french,VEHICLE_ISSUE,HIGH,false,
+4,truck broke down on the highway,english,VEHICLE_ISSUE,HIGH,false,
+5,le camion kharban i cant continue,mixed,VEHICLE_ISSUE,HIGH,false,
+6,pneu crevé rani wa9ef,arabizi,VEHICLE_ISSUE,HIGH,false,
+7,بونيو مثقب توقفت,arabic-script,VEHICLE_ISSUE,HIGH,false,
+8,flat tire need assistance,english,VEHICLE_ISSUE,LOW,false,
+9,probleme moteur camion narrete,french,VEHICLE_ISSUE,HIGH,false,
+10,3atlet el karhba fi nos tri9,arabizi,VEHICLE_ISSUE,HIGH,false,
+11,engine overheating had to stop,english,VEHICLE_ISSUE,HIGH,false,
+12,المحرك سخن توقفت في الطريق,arabic-script,VEHICLE_ISSUE,HIGH,false,
+13,battery fargha ma tnjamch ndemi,mixed,VEHICLE_ISSUE,LOW,false,
+14,chta 9awya tri9 masdouda,arabizi,WEATHER,HIGH,false,
+15,مطر قوي الطريق مسدودة,arabic-script,WEATHER,HIGH,false,known false-positive risk: contains rain-adjacent Arabic terms only, not vehicle words
+16,grosse pluie route bloquee,french,WEATHER,HIGH,false,
+17,heavy rain road flooded cant pass,english,WEATHER,HIGH,false,
+18,chta barcha the road is flooded,mixed,WEATHER,HIGH,false,
+19,ri7 9wiya khayfa nkammel,arabizi,WEATHER,LOW,false,
+20,ريح قوية خايف نكمل,arabic-script,WEATHER,LOW,false,
+21,orage tres fort visibilite nulle,french,WEATHER,HIGH,false,
+22,snow storm truck stuck,english,WEATHER,CRITICAL,false,
+23,fayadan fi tri9 el karhba ma temchich,arabizi,WEATHER,CRITICAL,false,
+24,فيضان في الطريق السيارة ما تمشيش,arabic-script,WEATHER,CRITICAL,false,
+25,light rain slight delay,english,WEATHER,LOW,false,
+26,chta khfifa just a small delay,mixed,WEATHER,LOW,false,
+27,tri9 masdouda 7asb chantier,arabizi,ROAD_TRAFFIC,HIGH,false,road closed for construction not weather
+28,الطريق مسدودة بسبب أشغال,arabic-script,ROAD_TRAFFIC,HIGH,false,
+29,route fermee travaux,french,ROAD_TRAFFIC,HIGH,false,
+30,road closed for construction long detour,english,ROAD_TRAFFIC,HIGH,false,
+31,tri9 msakra fama greve des routiers,mixed,ROAD_TRAFFIC,HIGH,false,strike not weather
+32,zdi7am kbir fi tri9 ma nnajamch nemchi,arabizi,ROAD_TRAFFIC,LOW,false,
+33,ازدحام كبير في الطريق ما نجمش نتحرك,arabic-script,ROAD_TRAFFIC,LOW,false,
+34,massive traffic jam not moving for an hour,english,ROAD_TRAFFIC,LOW,false,
+35,embouteillage enorme sur la route,french,ROAD_TRAFFIC,LOW,false,
+36,7adhr accident 9dami tri9 masdouda,arabizi,ROAD_TRAFFIC,HIGH,false,accident ahead blocking road not the driver's own vehicle
+37,حادث قدامي الطريق مسدودة,arabic-script,ROAD_TRAFFIC,HIGH,false,
+38,police blocked the road for an inspection,english,ROAD_TRAFFIC,LOW,false,
+39,ma l9itch el client 3andou telifoun sakket,arabizi,CUSTOMER_ABSENT,LOW,false,confusable pair vs row 53 (cargo)
+40,ما لقيتش الكليان تليفونو ساكت,arabic-script,CUSTOMER_ABSENT,LOW,false,
+41,client absent personne a la maison,french,CUSTOMER_ABSENT,LOW,false,
+42,no one home customer not answering,english,CUSTOMER_ABSENT,LOW,false,
+43,client sorti ma jawebch fil tel,mixed,CUSTOMER_ABSENT,LOW,false,
+44,raho kharej ma najamch nsallem,arabizi,CUSTOMER_ABSENT,LOW,false,
+45,راهو خارج ما نجمش نسلم,arabic-script,CUSTOMER_ABSENT,LOW,false,
+46,tried calling three times no answer,english,CUSTOMER_ABSENT,LOW,false,
+47,personne ne repond a la porte,french,CUSTOMER_ABSENT,LOW,false,
+48,el client mouch mawjoud fi dar barcha wa9t,arabizi,CUSTOMER_ABSENT,HIGH,false,waited a long time
+49,الحريف موش موجود في الدار برشة وقت,arabic-script,CUSTOMER_ABSENT,HIGH,false,
+50,customer unreachable will retry tomorrow,english,CUSTOMER_ABSENT,LOW,false,
+51,sonne plusieurs fois client ma raddch,mixed,CUSTOMER_ABSENT,LOW,false,
+52,i couldnt find the products,english,CARGO_ISSUE,LOW,false,the original bug case from the task description
+53,ma l9itch el sel3a fi camion,arabizi,CARGO_ISSUE,LOW,false,confusable pair vs row 39 (customer)
+54,ما لقيتش السلعة في الكاميو,arabic-script,CARGO_ISSUE,LOW,false,
+55,marchandise manquante dans le camion,french,CARGO_ISSUE,LOW,false,
+56,goods missing from the shipment,english,CARGO_ISSUE,LOW,false,
+57,el package kayen probleme certains articles manquants,mixed,CARGO_ISSUE,LOW,false,
+58,sel3a mkassra chwaya,arabizi,CARGO_ISSUE,LOW,false,
+59,السلعة مكسورة شوية,arabic-script,CARGO_ISSUE,LOW,false,
+60,colis endommage a la livraison,french,CARGO_ISSUE,LOW,false,
+61,box arrived damaged some items broken,english,CARGO_ISSUE,LOW,false,false-positive risk word: damaged
+62,el carton mballel bel ma sel3a 5asra,arabizi,CARGO_ISSUE,HIGH,false,cargo wet and ruined not vehicle damage
+63,الكرتون مبلل بالماء السلعة خسرانة,arabic-script,CARGO_ISSUE,HIGH,false,
+64,wrong items loaded des produits differents,mixed,CARGO_ISSUE,LOW,false,
+65,ena mrid barcha manjamch nkamel,arabizi,DRIVER_ISSUE,HIGH,false,driver himself is sick not the vehicle
+66,أنا مريض برشة ما نجمش نكمل,arabic-script,DRIVER_ISSUE,HIGH,false,
+67,je suis malade je ne peux pas continuer,french,DRIVER_ISSUE,HIGH,false,
+68,i feel very sick cannot continue driving,english,DRIVER_ISSUE,HIGH,false,
+69,chaufeur jri7 in accident blesse,mixed,DRIVER_ISSUE,CRITICAL,false,driver injured not just vehicle damage
+70,jri7t chwaya fi eid ma najamch nsou9,arabizi,DRIVER_ISSUE,HIGH,false,
+71,جريت شوية في اليد ما نجمش نسوق,arabic-script,DRIVER_ISSUE,HIGH,false,
+72,driver injured in a minor fall needs medical help,english,DRIVER_ISSUE,CRITICAL,false,
+73,chauffeur blesse besoin d une ambulance,french,DRIVER_ISSUE,CRITICAL,false,
+74,ena 3ayyen barcha lezemni nrtah chwaya,arabizi,DRIVER_ISSUE,LOW,false,tired not injured
+75,أنا عيان برشة لازمني نرتاح شوية,arabic-script,DRIVER_ISSUE,LOW,false,
+76,extremely tired need a short break before continuing,english,DRIVER_ISSUE,LOW,false,
+77,ma l9itch el adresse el GPS ghalet,arabizi,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER
+78,ما لقيتش العنوان الجي بي اس غالط,arabic-script,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER; REGRESSION CHECK: baseline predicted CUSTOMER_ABSENT (see PROGRESS.md)
+79,impossible de trouver l adresse le GPS est faux,french,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER
+80,cant find the delivery address GPS is wrong,english,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER
+81,adresse fausse ma3andich el number exact,mixed,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER; REGRESSION CHECK: baseline predicted CUSTOMER_ABSENT (see PROGRESS.md)
+82,el 3anwan machi sa7i7 dert dour barcha,arabizi,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER
+83,العنوان مش صحيح درت دور برشة,arabic-script,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER
+84,wrong address given by customer wasted an hour searching,english,OTHER,HIGH,false,was ADDRESS_ISSUE; out of scope -> OTHER; REGRESSION CHECK: baseline predicted CUSTOMER_ABSENT (see PROGRESS.md)
+85,l adresse n existe pas sur la carte,french,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER; REGRESSION CHECK: baseline predicted CUSTOMER_ABSENT (see PROGRESS.md)
+86,ma3andich raqm el 3imara el adresse na9sa,arabizi,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER; REGRESSION CHECK: baseline predicted CUSTOMER_ABSENT (see PROGRESS.md)
+87,ما عنديش رقم العمارة العنوان ناقص,arabic-script,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER; REGRESSION CHECK: baseline predicted CUSTOMER_ABSENT (see PROGRESS.md)
+88,incomplete address missing building number,english,OTHER,LOW,false,was ADDRESS_ISSUE; out of scope -> OTHER
+89,ok,english,OTHER,LOW,true,too vague no signal at all
+90,cha7al fama,arabizi,OTHER,LOW,true,unclear meaning out of context
+91,شنوة نعملو توا,arabic-script,OTHER,LOW,true,what do we do now -- no concrete category signal
+92,je ne sais pas quoi faire,french,OTHER,LOW,true,
+93,something is wrong not sure what,english,OTHER,LOW,true,
+94,probleme general 3andi chwaya mochkla,mixed,OTHER,LOW,true,vague no concrete category signal
+95,3andi mochkla,arabizi,OTHER,LOW,true,
+96,عندي مشكلة,arabic-script,OTHER,LOW,true,
+97,please call me back,english,OTHER,LOW,true,
+98,tout va bien pour l instant,french,OTHER,LOW,true,not actually an exception -- robustness check
+99,kolchay behi normal,arabizi,OTHER,LOW,true,should not trigger any exception category
+100,will update you later,english,OTHER,LOW,true,
